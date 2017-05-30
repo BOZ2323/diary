@@ -1,3 +1,184 @@
+
+
+
+
+## OBJECT
+
+accessing nested objects:
+var ourStorage = {
+    "desk": {
+        "drawer": "stapler"
+    },
+    "cabinet": {
+        "top drawer": {
+            "folder1": "a file",
+            "folder2": "secrets"
+        },
+        "bottom drawer": "soda"
+    }
+};
+ourStorage.cabinet["top drawer"].folder2; // "secrets"
+ourStorage.desk.drawer; // "stapler"
+        }
+    }
+    }
+}
+
+
+
+allTimes {
+    "learnmore": "always",
+    "learn more": "always"
+}
+Objects are similar to arrays, except that instead of using indexes to access and modify their data, you access the data in objects through what are called properties.
+allTimes.learnmore
+The second way to access the properties of an object is bracket notation ([]). If the property of the object you are trying to access has a space in it, you will need to use bracket notation.
+allTimes[learn more]
+
+var cashRegister = {
+total:0,
+      add: function(itemCost){
+          this.total += itemCost;
+      }
+};
+
+
+cashRegister.add(0.98);//call the add method for our items
+cashRegister.add(1.23);
+cashRegister.add(4.99);
+cashRegister.add(0.45);
+//Show the total bill
+console.log("Total is: ",cashRegister.total)
+
+
+
+
+
+
+// question is: what is this "Object.prototype" anyway...?
+//do:
+var prototypeType = typeof Object.prototype;    
+console.log(prototypeType);
+
+var hasOwn = Object.prototype.hasOwnProperty('hasOwnProperty') ;
+console.log(hasOwn);
+
+key value pairs in objects:
+
+Using myObj.checkProp it is looking for a property literally called checkProp on the object.
+Using myObj[checkProp] it is looking at the variable passed to the function and using its content as the lookup value.
+
+for(var i in foo){
+      alert(i); // alerts key
+        alert(foo[i]); //alerts key's value
+}
+
+
+}
+##has own proptery
+var myObj = {
+        name: "Mascha"
+            
+};
+
+console.log( myObj.hasOwnProperty('name')  );
+}
+###for...in loop
+var key;
+for (var x in languages){
+    if(typeof languages[x] === "string"){ //languages[x], means the value of the key/value pair.
+    console.log(languages[x]);
+    console.log(x); //prints the key to the console
+    }
+}
+
+
+
+iterm2
+cmd d Opens a new split window
+While loop
+use while loop if you dont know how long you will be looping,
+
+##sort()
+var i = true;
+while (i) {
+        console.log("so gehts!");
+            i = false;
+};
+for (var i=0; i<6; i++){
+        console.log("du bist super, Lilli!");
+};
+
+Do while Loop
+var loopCondition = false;
+
+do {
+        console.log("I'm gonna stop looping 'cause my condition is " + loopCondition + "!");    
+} while (loopCondition);
+
+
+}
+
+}
+}### Nested For Loop:
+Here the the first for loop prints 3 times the second for loop, which prints from 1 to 5.
+for(var i = 1; i <= 3; i++){
+        for (var j = 1; j<= 5; j++){
+                    console.log(j);
+        }
+}
+####JS METHODS
+parseInt gets strings and returns whole numbers
+
+
+Date: March 15 2017
+Problem 1: in AdventofCode, day  3, there is a string of numbers. Sometimes they are divided by one white space, sometimes by two and three. To handle them there has to be the same amount of white spaces between the numbers. I did that through a regex and the replace() method:
+var data = dataTooManyWhiteSpace.replace(/\s+/g, ' ');
+// another regex, removes all numbers: .replace(/\d+/g,"")
+it replaces two or more white spaces by a single white space
+now I only have to data.split(" ");
+and it splits just where I want it to!!
+question answered here: http://stackoverflow.com/questions/6163169/replace-multiple-whitespaces-with-single-whitespace-in-javascript-string#6163180
+Problem 2:
+numbers should be arranged in arrays by three numbers. Works perfectly, but the last three numbers are left out.
+
+Problem 1: AdventofCode, day 4:
+
+
+
+
+roomData after split("["): [ 'nzydfxpc-rclop-qwzhpc-qtylyntyr-769', 'oshgk]'  
+next:
+var checksum =  roomData[1].replace(/\]/,"");
+console.log(checksum) = oshgk 
+
+great class in javacript for webdesign: javascript30.com
+In Lilli homework 2 I changed the value in line 20 from 3 to 6, now it prints all numbers. With 3, the last 3 numbers where left out!?
+
+
+
+Node
+execute node in vim: :! node %
+
+
+
+
+####Github
+new repository on github
+mkdir newDir on cmd
+git init
+git clone git@github.com:BOZ2323/Monday.git
+git add
+git commit
+git pull git@github.com:BOZ2323/Monday.git
+
+
+curl http://some.url --output some.file
+curl -o [shortname] [url]
+
+delete jshint errormessage:
+ctrl + w w and then q
+
 ##removes newline characters in bash!!
 cat code.js |  while read line; do echo -n "$line "; done
 
@@ -43,7 +224,21 @@ var species = dog["species"];
 var weight = dog.weight;
 var age = dog.age;
 
+
 Object literal  and dot.notation(constructor notation)
+if we want to create only one object, we use literal and if we want to use more we use the constructor notation
+function Person(job, married) {
+        this.job = job;
+            this.married = married;
+}
+var gabby = new Person("student", true);
+// create a "gabby" object using the Person constructor!
+var james = {
+        this.job:"programmer",
+            this.married: false
+}
+}
+}
 The method we've used to create objects uses object literal notation—that is, creating a new object with {  } and defining properties within the brackets.
 Another way of creating objects without using the curly brackets {  } is to use the keyword new. This is known as creating an object using a constructor.
 The new keyword creates an empty object when followed by Object(). The general syntax is:
@@ -111,6 +306,10 @@ aus VIM kopieren markieren, dann :w xsel --clipboard und paste an die Stelle
 git rebase --interactive HEAD~3
 
 D###Copy directory:###Copy directory:IARY 7.2.2017
+Regular expressions
+anchor, characterset, modifier
+anchor: where in the line
+
 trying to use sed to replace Zeichenfläche 345-neu.svg by 345.svg
 command: for file in *.svg ; do mv $file ${file//Zeichen/XYZ} ; done
 changes Zeichenfläche 347-neu.svg to XYZfläche 347-neu.svg
@@ -139,6 +338,8 @@ result: Zeichenfläche457.png
 Triumpf!!
 echo Zeichenfläche457-neu.png | sed 's/[^0-9]*\([0-9]*\).*\(\.png\)/\1\2/'
 result: 457.png
+
+the character '.' matches any character
 
 try to enter a second part to line [^0-9]*\([0-9]*\.png\)/
 
