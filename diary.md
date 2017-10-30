@@ -1,8 +1,101 @@
+//Aus dem Array von loadedInstructors wurden durch map(create.Person) jeweils neue Person Objects erstellt. Dieser Array wird an convertedInstructors übergeben. Jetzt wirdmit der sayName() method der Person class das erste Item von convertedInstructors aufgerufen.
+const convertedInstructors = loadedInstructors.map(create.Person);
+convertedInstructors[0].sayName;
+
+
+
+## STATIC function
+is defined on the class itself and not and instance. It is always there.
+eg:
+static create(obj){
+    return new Person(obj.name, obj. age)
+}
+## MAP()
+map takes an array and gives back another array by running each element through a function.
+##HTML 5 and CSS
+padding, margin, and border.
+
+An element's padding controls the amount of space between the element and its border.
+An element's margin controls the amount of space between an element's border and surrounding elements.
+Instead of specifying an element's padding-top, padding-right, padding-bottom, and padding-left properties, you can specify them all in one line, like this:
+
+padding: 10px 20px 10px 20px;
+
+
+body {
+    background-color: black;
+    font-family: Monospace;
+color: green;
+}
+.pink-text {
+color: pink;
+}
+.blue-text {
+color: blue;
+}
+#orange-text {
+color: orange;
+}
+</style>
+<h1 class="pink-text blue-text" id= orange-text >Hello World!</h1>
+
+Array.slice - As a negative index, begin indicates an offset from the end of the sequence. slice(-2) extracts the last two elements in the sequence.>>>>while loop
+
+The while loop is ideal when you want to use a loop, but you don't know how many times you'll have to execute that loop.
+var understand = true;
+
+while(understand){
+        console.log("I'm learning while loops!");
+            understand = false;
+}
+}
+>>>>>do/while loop
+Sometimes you want to make sure your loop runs at least one time no matter what. When this is the case, you want a modified while loop called a do/while loop.
+
+var loopCondition = false;
+
+do {
+    console.log("I'm gonna stop looping 'cause my condition is " + loopCondition + "!");    
+} while (loopCondition);
+}
+
+
+<link rel="stylesheet" href="ufo.css">
 
 
 
 
-## OBJECT
+
+##Recursion
+So, the question you have to ask yourself is "does the recursive case modify my arguments in such a way that each recursion brings it one step closer to the base case?"
+function factorial(n) {
+    if (n === 0) {
+        return 1;
+    }
+
+    // This is it! Recursion!!
+    return n * factorial(n - 1);
+}
+
+factorial(10);
+}
+}
+## ARRAYS
+Looping through nested arrays:
+var arr = [
+[1,2], [3,4], [5,6]
+];
+for (var i=0; i < arr.length; i++) {
+    for (var j=0; j < arr[i].length; j++) {
+        console.log(arr[i][j]);
+    }
+}
+    }
+}
+]
+
+
+## OBJECTS
 
 accessing nested objects:
 var ourStorage = {
